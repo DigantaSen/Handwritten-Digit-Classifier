@@ -19,14 +19,17 @@ def load_models():
 
     base = os.path.join(os.path.dirname(__file__), "models")
     models = {}
-    for name, fname in [
-        ("Perceptron", "perceptron_model.h5"),
-        ("ANN",        "ann_model.h5"),
-        ("CNN",        "cnn_model.h5"),
+    for name, keras_fname, h5_fname in [
+        ("Perceptron", "perceptron_model.keras", "perceptron_model.h5"),
+        ("ANN",        "ann_model.keras",        "ann_model.h5"),
+        ("CNN",        "cnn_model.keras",         "cnn_model.h5"),
     ]:
-        path = os.path.join(base, fname)
-        if os.path.exists(path):
-            models[name] = load_model(path)
+        keras_path = os.path.join(base, keras_fname)
+        h5_path    = os.path.join(base, h5_fname)
+        if os.path.exists(keras_path):
+            models[name] = load_model(keras_path)
+        elif os.path.exists(h5_path):
+            models[name] = load_model(h5_path)
         else:
             models[name] = None
     return models
