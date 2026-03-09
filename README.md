@@ -2,6 +2,8 @@
 
 An end-to-end deep learning project that trains three neural network architectures on the MNIST dataset and exposes them through an interactive Streamlit web app.
 
+🚀 **Live Demo:** [handwritten-digit-classifier-by-diganta.streamlit.app](https://handwritten-digit-classifier-by-diganta.streamlit.app/)
+
 ---
 
 ## Dataset
